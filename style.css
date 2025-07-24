@@ -184,6 +184,9 @@ header, .nav, .mobile-icons {
   z-index: 10;
   position: relative;
 }
+.close-menu {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .nav {
