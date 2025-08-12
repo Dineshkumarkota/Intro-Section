@@ -23,7 +23,7 @@ header {
 
 .nav {
   display: flex;
-  z-index: 100;
+  z-index: 50;
 }
 
 .nav-links {
@@ -118,7 +118,7 @@ header {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  z-index: 20000;
+  z-index: 9999;
    pointer-events: none !important;
 }
 
@@ -126,7 +126,7 @@ header {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  z-index: 20000;
+  z-index:99999 ;
 }
 
 .hero {
@@ -217,7 +217,7 @@ header, .nav {
     height: 100vh;
     padding: 20px;
     box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-     z-index: 10 !important;
+     z-index: 100;
      pointer-events: auto;
   }
 .nav.active {
