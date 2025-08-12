@@ -20,16 +20,20 @@ closeMenu.addEventListener('click', () => {
 });
 
 // Dropdown Toggle (Features / Company)
-const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+const navLinks = document.querySelectorAll('.nav-link.dropdown');
 
-dropdownToggles.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    const dropdown = e.target.closest('.dropdown');
-    const list = dropdown.querySelector('.dropdown-list');
-    const arrow = dropdown.querySelector('.arrow-icon');
+navLinks.forEach((navLink) => {
+  navLink.addEventListener('click', (e) => {
+    // Prevent toggle when clicking on links inside dropdown
+    if (e.target.tagName.toLowerCase() === 'a' || e.target.closest('a')) {
+      return;
+    }
 
-    const isOpen = dropdown.classList.contains('link-open');
-    dropdown.classList.toggle('link-open');
+    const list = navLink.querySelector('.dropdown-list');
+    const arrow = navLink.querySelector('.arrow-icon');
+
+    const isOpen = navLink.classList.contains('link-open');
+    navLink.classList.toggle('link-open');
     list.style.display = isOpen ? 'none' : 'block';
     arrow.src = isOpen
       ? './assets/images/icon-arrow-down.svg'
