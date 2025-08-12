@@ -18,6 +18,7 @@ closeMenu.addEventListener('click', () => {
   openMenu.style.display = 'block';
   closeMenu.style.display = 'none';
 });
+
 // Dropdown Toggle (Features / Company)
 const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
