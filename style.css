@@ -112,21 +112,24 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0,0,0,0.5);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
   z-index: 20000;
-   pointer-events: none !important;
+  pointer-events: none !important;
+  display: flex; /* lets nav sit inside */
+  justify-content: flex-end; /* nav sticks to right */
 }
 
 .overlay.active {
   opacity: 1;
   visibility: visible;
-  pointer-events: auto;
-  z-index: 20000;
+  pointer-events: auto ;
+  z-index: 30000;
+
 }
 
 .hero {
@@ -206,42 +209,57 @@ header, .nav {
 }
 
 @media (max-width: 768px) {
+  .overlay {
+    justify-content: flex-end;
+  }
+
+  .overlay.active {
+    display: flex; /* nav will appear inside here */
+  }
+
   .nav {
-    display: none;
+    display: flex;
     flex-direction: column !important;
-    position: fixed;
-    top: 0;
-    right: 0;
     background: white;
     width: 250px;
-    height: 100vh;
+    height: 100%;
     padding: 20px;
     box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-     z-index: 10 !important;
-     pointer-events: auto;
   }
-.nav.active {
-  display: flex !important;
-flex-direction: column !important;
- z-index: 10;
-}
+    .nav-links {
+    flex-direction: column !important;
+    width: 100%;
+    gap: 15px;
+  }
+   .nav-links li {
+    width: 100%;
+  }
 
   .mobile-icons {
     display: block;
     cursor: pointer;
-
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 40000; /* higher than overlay */
   }
-.mobile-icons img.open-menu {
-  display: block;
-  cursor: pointer;
-}
 
-.mobile-icons img.close-menu {
-  display: none;
-  cursor: pointer;
+  .mobile-icons img.open-menu {
+    display: block;
+  }
 
+  .mobile-icons img.close-menu {
+    display: none;
+  }
 
-}
+  /* When menu is open, hide open icon and show close icon */
+  .overlay.active ~ .mobile-icons img.open-menu {
+    display: none;
+  }
+  .overlay.active ~ .mobile-icons img.close-menu {
+    display: block;
+  }
+
   .hero {
     flex-direction: column-reverse;
     text-align: center;
