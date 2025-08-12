@@ -102,6 +102,10 @@ header {
 
 .mobile-icons {
   display: none;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 40;
 }
 
 .overlay {
@@ -115,6 +119,13 @@ header {
   visibility: hidden;
   transition: opacity 0.3s ease;
   z-index: 20;
+   pointer-events: none !important;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .hero {
@@ -181,7 +192,7 @@ footer {
 footer a {
   color: #333;
 }
-header, .nav, .mobile-icons {
+header, .nav {
   z-index: 10;
   position: relative;
 }

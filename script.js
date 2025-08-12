@@ -1,4 +1,3 @@
-// Mobile Menu Toggle
 const openMenu = document.querySelector('.open-menu');
 const closeMenu = document.querySelector('.close-menu');
 const nav = document.querySelector('.nav');
@@ -6,8 +5,7 @@ const overlay = document.querySelector('.overlay');
 
 openMenu.addEventListener('click', () => {
   nav.style.display = 'flex';
-  overlay.style.opacity = '1';
-  overlay.style.visibility = 'visible';
+  overlay.classList.add('active');  // Add active class instead of inline styles
 
   openMenu.style.display = 'none';
   closeMenu.style.display = 'block';
@@ -15,8 +13,7 @@ openMenu.addEventListener('click', () => {
 
 closeMenu.addEventListener('click', () => {
   nav.style.display = 'none';
-  overlay.style.opacity = '0';
-  overlay.style.visibility = 'hidden';
+  overlay.classList.remove('active');  // Remove active class
 
   openMenu.style.display = 'block';
   closeMenu.style.display = 'none';
