@@ -4,8 +4,9 @@ const nav = document.querySelector('.nav');
 const overlay = document.querySelector('.overlay');
 
 openMenu.addEventListener('click', () => {
-  nav.classList.add('active');
-  overlay.classList.add('active');
+ overlay.classList.add('active'); 
+  nav.classList.add('active');    
+
 
   openMenu.style.display = 'none';
   closeMenu.style.display = 'block';
@@ -17,6 +18,8 @@ closeMenu.addEventListener('click', () => {
 
   openMenu.style.display = 'block';
   closeMenu.style.display = 'none';
+
+ 
 });
 
 // Dropdown Toggle (Features / Company)
