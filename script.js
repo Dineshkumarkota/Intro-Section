@@ -4,16 +4,16 @@ const nav = document.querySelector('.nav');
 const overlay = document.querySelector('.overlay');
 
 openMenu.addEventListener('click', () => {
-  nav.style.display = 'flex';
-  overlay.classList.add('active');  // Add active class instead of inline styles
+  nav.classList.add('active');
+  overlay.classList.add('active');
 
   openMenu.style.display = 'none';
   closeMenu.style.display = 'block';
 });
 
 closeMenu.addEventListener('click', () => {
-  nav.style.display = 'none';
-  overlay.classList.remove('active');  // Remove active class
+  nav.classList.remove('active');
+  overlay.classList.remove('active');
 
   openMenu.style.display = 'block';
   closeMenu.style.display = 'none';
