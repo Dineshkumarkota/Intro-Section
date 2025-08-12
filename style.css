@@ -23,7 +23,7 @@ header {
 
 .nav {
   display: flex;
-  z-index: 5
+  z-index: 100;
 }
 
 .nav-links {
@@ -118,7 +118,7 @@ header {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  z-index: 9999 !important;
+  z-index: 20000;
    pointer-events: none !important;
 }
 
@@ -126,6 +126,7 @@ header {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  z-index: 20000;
 }
 
 .hero {
@@ -194,7 +195,7 @@ footer a {
 }
 header, .nav {
   z-index: 10;
-  position: relative;
+
 }
 .close-menu {
   display: none;
@@ -216,16 +217,19 @@ header, .nav {
     height: 100vh;
     padding: 20px;
     box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-     z-index: 15 !important;
+     z-index: 10 !important;
      pointer-events: auto;
   }
 .nav.active {
   display: flex !important;
 flex-direction: column !important;
+ z-index: 10;
 }
+
   .mobile-icons {
     display: block;
     cursor: pointer;
+
   }
 .mobile-icons img.open-menu {
   display: block;
@@ -235,6 +239,8 @@ flex-direction: column !important;
 .mobile-icons img.close-menu {
   display: none;
   cursor: pointer;
+
+
 }
   .hero {
     flex-direction: column-reverse;
